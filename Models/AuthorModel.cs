@@ -1,12 +1,17 @@
-﻿namespace Moment3_ASPNET.Models
+﻿using System.ComponentModel;
+
+namespace Moment3_ASPNET.Models
 {
     public class AuthorModel
     {
         //properties
         public int Id { get; set; }
 
-        public string? FirstName { get; set; }
-        public string? LastName { get; set; }
+        [DisplayName("Namn")]
+        public string? FullName { get; set; }
+
+        [DisplayName("Födelseår")]
+        public int? BirthYear { get; set; }
 
         public List<BookModel>? Books { get; set; }
     }
