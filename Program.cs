@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//konfigurerar Entity Framework och SQLite
 builder.Services.AddDbContext<BookCollectionDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultDbString")));
 
@@ -26,6 +27,7 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+//definierar standardrutt
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")

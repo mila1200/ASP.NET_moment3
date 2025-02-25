@@ -2,6 +2,7 @@
 
 namespace Moment3_ASPNET.Models
 {
+    //modell för författare
     public class AuthorModel
     {
         //properties
